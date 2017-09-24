@@ -13,6 +13,6 @@ def introduce_myself():
 introduce_myself()
 ```
 
-| Name                | Company           | Job             |
+| Name                | Student           | Job             |
 | ------------------- | ----------------- | --------------- |
-| Clément Tailleur    | Octo Technology   | Data scientist  |
+| Clément Tailleur    | Télécom ParisTech | Data scientist  |
