@@ -16,13 +16,13 @@ def french_finance_scraper_1(year):
     data_list = data_list[:6] + data_list[9:15]
     dates_list_cleaned = [dlc.replace('\xa0','').strip() for dlc in data_list]
 
-    data = {}
+    data = {"Valeurs": ['Euros par habitant', 'Moyenne de la strate']}
     i=0
     for c in ['A_' + year, 'B_' + year, 'C_' + year, 'D_' + year]:
-        data[c] = dates_list_cleaned[i:i+3]
+        data[c] = dates_list_cleaned[i+1:i+3]
         i += 3
 
-    return pd.DataFrame(data)
+    return pd.DataFrame(data).set_index(['Valeurs'])
 
 
 def french_finance_scraper_2(year):
@@ -37,13 +37,13 @@ def french_finance_scraper_2(year):
         data_list.append(dl.text.replace('\xa0','').strip())
     dates_list_cleaned = data_list[:6] + data_list[9:15]
 
-    data = {}
+    data = {"Valeurs": ['Euros par habitant', 'Moyenne de la strate']}
     i=0
     for c in ['A_' + year, 'B_' + year, 'C_' + year, 'D_' + year]:
-        data[c] = dates_list_cleaned[i:i+3]
+        data[c] = dates_list_cleaned[i+1:i+3]
         i += 3
 
-    return pd.DataFrame(data)
+    return pd.DataFrame(data).set_index(['Valeurs'])
 
 
 for year_studied in range(2010, 2016):
