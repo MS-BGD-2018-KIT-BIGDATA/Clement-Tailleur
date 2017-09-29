@@ -46,6 +46,7 @@ def french_finance_scraper_2(year):
     return pd.DataFrame(data).set_index(['Valeurs'])
 
 
+
 for year_studied in range(2010, 2016):
     print(french_finance_scraper_1(year_studied))
     print()
